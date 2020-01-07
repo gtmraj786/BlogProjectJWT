@@ -136,6 +136,22 @@ public class PostRestController {
         return "Post created successfully";
     }
 
+
+
+
+    @PostMapping("/addCategory")
+    public String saveCategory( @RequestParam(required = true, defaultValue = "", name = "category") String cat)
+    {
+        Category category=new Category();
+
+        category.setName(cat);
+        categoryService.save(category);
+
+
+        return "Category Added successfully";
+
+    }
+
     @PutMapping("/update")
     public String update(@RequestParam int id,
                        @RequestParam(required = true, defaultValue = "", name = "title") String title,

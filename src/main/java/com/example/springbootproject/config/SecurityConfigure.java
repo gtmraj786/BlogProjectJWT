@@ -30,6 +30,8 @@ public class SecurityConfigure extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/posts/authenticate").permitAll()
                 .and().authorizeRequests().antMatchers("/posts/posts").permitAll()
                 .and().authorizeRequests().antMatchers("/posts/signUp").permitAll()
+
+                .and().authorizeRequests().antMatchers("/posts/addCategory").permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
